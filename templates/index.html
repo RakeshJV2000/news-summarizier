@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Articles</title>
+    <style>
+        body {
+            font-family: "DM Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+            background-color: #F3F8FF;
+            margin: 0;
+            padding: 0;
+        }
+        .title-bar {
+            padding: 50px;
+            background-color: #222831; /* Background color of the title bar */
+            color: #F3F8FF;
+            text-align: center; /* Center align the text */
+            font-size: 50px; /* Set the text size */
+            width: 100%;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .article {
+            padding: 20px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .summary{
+            flex: 0 0 60%;
+        }
+        .img {
+            flex: 0 0 40%;
+        }
+
+        .img img {
+            max-width: 100%; /* Ensure the image does not exceed the width of its container */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="title-bar">
+        Top News Summary
+    </div>
+    {% for item in data %}
+    <div class="article">
+        <div class="summary">
+            <h1>{{ item.headline }}</h1>
+            <p>{{ item.summary }}</p>
+            <a href="{{ item.url }}">Read more</a>
+        </div>
+        <div class="img">
+            <img src="{{ item.img }}">
+        </div>
+    </div>
+    {% endfor %}
+<!--    <div class="article">-->
+<!--        <div class="summary">-->
+<!--            <h1>UK supermarket chains Tesco and Sainsbury's face technical issues affecting deliveries and payments</h1>-->
+<!--            <p>Tesco and Sainsbury's, two of the largest supermarket chains in the UK, are experiencing technical issues that-->
+<!--                have disrupted grocery deliveries and contactless payments. Sainsbury's attributed the problem to an error in-->
+<!--                a software update, affecting a significant number of customers. While online ordering is still available,-->
+<!--                customers are unable to make contactless payments and must use cash or chipped credit cards. Tesco also reported-->
+<!--                a technical issue leading to the cancellation of some online orders, but in-store shopping remains unaffected.-->
+<!--                These incidents follow a recent system failure at McDonald's that caused disruptions globally. Both Tesco and-->
+<!--                Sainsbury's are working to resolve the issues promptly.</p>-->
+<!--            <a href="https://www.cnn.com/2024/03/16/business/tesco-sainsburys-delivery-technical-issues/index.html" target="_blank">-->
+<!--                Read more-->
+<!--            </a>-->
+<!--        </div>-->
+<!--        <div class="img">-->
+<!--            <img src="https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2082108261.jpg?c=16x9&q=w_800,c_fill" alt="Image 1">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="article">-->
+<!--        <div class="summary">-->
+<!--            <h1>UK supermarket chains Tesco and Sainsbury's face technical issues affecting deliveries and payments</h1>-->
+<!--            <p>Tesco and Sainsbury's, two of the largest supermarket chains in the UK, are experiencing technical issues that-->
+<!--                have disrupted grocery deliveries and contactless payments. Sainsbury's attributed the problem to an error in-->
+<!--                a software update, affecting a significant number of customers. While online ordering is still available,-->
+<!--                customers are unable to make contactless payments and must use cash or chipped credit cards. Tesco also reported-->
+<!--                a technical issue leading to the cancellation of some online orders, but in-store shopping remains unaffected.-->
+<!--                These incidents follow a recent system failure at McDonald's that caused disruptions globally. Both Tesco and-->
+<!--                Sainsbury's are working to resolve the issues promptly.</p>-->
+<!--            <a href="https://www.cnn.com/2024/03/16/business/tesco-sainsburys-delivery-technical-issues/index.html" target="_blank">-->
+<!--                Read more-->
+<!--            </a>-->
+<!--        </div>-->
+<!--        <div class="img">-->
+<!--            <img src="https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2082108261.jpg?c=16x9&q=w_800,c_fill" alt="Image 1">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    {% for item in data %}-->
+<!--    <div class="article">-->
+<!--        <h2>{{ item.headline }}</h2>-->
+<!--        <p>{{ item.summary }}</p>-->
+<!--        <a href="{{ item.url }}">Read more</a>-->
+<!--    </div>-->
+<!--    {% endfor %}-->
+</body>
+</html>
